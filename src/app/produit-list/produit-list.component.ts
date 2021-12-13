@@ -1,11 +1,17 @@
-import { DetailFactureService } from './../Services/detail-facture.service';
-import { DetailFacture } from './../models/DetailFacture';
+
+
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from './../Services/product.service';
-import { Produit } from './../models/Produit';
+
+
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
+import { ProductService } from '../Services/product.service';
+import { Produit } from '../models/Produit';
+import { DetailFactureService } from '../Services/detail-facture.service';
+import { DetailFacture } from '../models/DetailFacture';
 
 @Component({
   selector: 'app-produit-list',
@@ -18,7 +24,12 @@ export class ProduitListComponent implements OnInit,OnChanges {
   formGeneral: FormGroup;
   toAdd: Produit;
 
-
+  
+  id:number;
+  idProduit:number;
+  prod:any;
+  hidden:boolean=false;
+  nb : number;
   constructor(private us:ProductService,private us2:DetailFactureService,private uss: ActivatedRoute) { }
   ngOnChanges(changes: SimpleChanges): void {
 
@@ -52,7 +63,10 @@ export class ProduitListComponent implements OnInit,OnChanges {
     });
   }
 
-
+  getbyidproduit(i:number){
+    this.hidden=true;
+    this.nb=i;
+  }
 
   save() {
 

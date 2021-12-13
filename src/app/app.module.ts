@@ -16,6 +16,14 @@ import { ProduitListComponent } from './produit-list/produit-list.component';
 import { UpdateFactureComponent } from './update-facture/update-facture.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from 'ngx-toastr';
+import { DetailProduitComponent } from './detail-produit/detail-produit.component';
+import { ListeProduitadminComponent } from './liste-produitadmin/liste-produitadmin.component';
+import { ModalModule } from 'ngx-modal-bootstrap';
+import { ProduitPipe } from './rechercherproduit/produit.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ChartsComponent } from './charts/charts.component';
+//import {ModalModule} from 'ngx-bootstrap/modal';
+//import {ModalModule} from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -26,7 +34,11 @@ import { ToastrModule } from 'ngx-toastr';
     SidbarComponent,
     LayoutComponent,
    
-    ProduitListComponent
+    ProduitListComponent,
+         DetailProduitComponent,
+         ListeProduitadminComponent,
+         ProduitPipe,
+         ChartsComponent
     
     
     
@@ -39,7 +51,11 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ModalModule.forRoot(),
+    NgxPaginationModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
